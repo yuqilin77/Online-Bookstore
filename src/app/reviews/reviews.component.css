@@ -1,0 +1,71 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.book-thumbnail {
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+    max-height: 300px;
+}
+
+.review-input {
+    height: 70px;
+    width: 96%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: left;
+    word-wrap: break-word;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.logout-button {
+    background-color: #ff4d4d;
+    /* Red color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+    /* Darker red color on hover */
+}

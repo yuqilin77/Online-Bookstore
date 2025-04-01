@@ -1,0 +1,33 @@
+<div class="container">
+    <h2>Books Liked</h2>
+    <div class="likes-container">
+        <div class="like-box" *ngFor="let like of forLikes">
+            <img *ngIf="like[1]" [src]="like[1]" alt="Book Thumbnail" class="thumbnail">
+            <div>{{ like[0] }}</div>
+        </div>
+    </div>
+    <h2>Total Reviews</h2>
+    <table>
+        <tr>
+            <th>Book ID</th>
+            <th>Book Title</th>
+            <th>Authors</th>
+            <th>Cover</th>
+            <th class="review-column">Review</th>
+            <th>Timestamp</th>
+        </tr>
+        <ng-container *ngFor="let review of forRender">
+            <tr>
+                <td>{{ review[0] }}</td>
+                <td>{{ review[1] }}</td>
+                <td>{{ review[2] }}</td>
+                <td><img *ngIf="review[3]" [src]="review[3]" alt="Book Thumbnail" class="thumbnail"></td>
+                <td>{{ review[4] }}</td>
+                <td>{{ review[5] | date: 'medium' }}</td>
+            </tr>
+        </ng-container>
+    </table>
+    <button routerLink="/search" class="search-button">Search Book</button>
+    <br>
+    <button (click)="logout()" class="logout-button">Logout</button>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+    <h2 class="title">Search Books</h2>
+    <div>Book title</div>
+    <div class="input-container">
+        <input type="text" [(ngModel)]="title" placeholder="Search for title" class="search-input">
+    </div>
+    <br>
+    <div>Authors if you know</div>
+    <div class="input-container">
+        <input type="text" [(ngModel)]="author" placeholder="Authors" class="search-input">
+    </div>
+    <br>
+    <div class="input-container">
+        <button (click)="searchBooks()" class="search-button">Search</button>
+    </div>
+
+    <table *ngIf="searchResults.length > 0">
+        <tr>
+            <th>Title</th>
+            <th>Authors</th>
+            <th>Description</th>
+            <th>Cover Photo</th>
+            <th>Publish Date</th>
+            <th>Page Count</th>
+            <th style="width: 8%;">Like</th>
+            <th>Review</th>
+        </tr>
+        <tr *ngFor="let book of searchResults">
+            <td>{{ book.volumeInfo.title }}</td>
+            <td>{{ book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'N/A' }}</td>
+            <td>{{ book.volumeInfo.description ? book.volumeInfo.description.substring(0, 250) + '...' : 'N/A' }}</td>
+            <td><img *ngIf="book.volumeInfo.imageLinks" [src]="book.volumeInfo.imageLinks.thumbnail"
+                    alt="Book Thumbnail" class="thumbnail"></td>
+            <td>{{ book.volumeInfo.publishedDate ? book.volumeInfo.publishedDate : 'N/A' }}</td>
+            <td>{{ book.volumeInfo.pageCount ? book.volumeInfo.pageCount : 'N/A' }}</td>
+            <td>
+                <button (click)="toggleLike(book.id)" class="like-button" [class.liked]="likes.has(book.id)">
+                    {{ likes.has(book.id) ? 'Dislike' : 'Like' }}
+                </button>
+            </td>
+            <td>
+                <button (click)="writeReview(book.id)">Write Review</button>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <button routerLink="/profile" class="profile-button">Profile</button>
+    <br>
+    <button (click)="logout()" class="logout-button">Logout</button>
+</div>

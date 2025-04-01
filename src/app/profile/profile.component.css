@@ -1,0 +1,107 @@
+.container {
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.review-column {
+    width: 30%;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+.container table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.search-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #45a049;
+}
+
+.logout-button {
+    background-color: #ff4d4d;
+    /* Red color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.logout-button:hover {
+    background-color: #e60000;
+}
+
+.likes-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.like-box {
+    width: 200px;
+    /* Adjust the width as per your requirement */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.like-box img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.like-box div {
+    font-weight: bold;
+}

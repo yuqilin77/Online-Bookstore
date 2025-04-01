@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Write Review</h2>
+    <div *ngIf="book">
+        <p><strong>Title:</strong> {{ book.volumeInfo.title }}</p>
+        <p><strong>Authors:</strong> {{ book.volumeInfo.authors ? book.volumeInfo.authors.join(', ') : 'N/A' }}</p>
+        <p><strong>Description:</strong></p>
+        <div [innerHTML]="book.volumeInfo.description"></div>
+        <br>
+        <p><strong>Cover Photo:</strong></p>
+        <img *ngIf="book.volumeInfo.imageLinks" [src]="book.volumeInfo.imageLinks.thumbnail" alt="Book Thumbnail"
+            class="book-thumbnail">
+        <p><strong>Published Date:</strong> {{ book.volumeInfo.publishedDate ? book.volumeInfo.publishedDate : 'N/A' }}
+        </p>
+        <p><strong>Page Count:</strong> {{ book.volumeInfo.pageCount ? book.volumeInfo.pageCount : 'N/A' }}</p>
+    </div>
+    <form (ngSubmit)="saveReview(reviewForm.value)" #reviewForm="ngForm">
+        <div>
+            <textarea name="review" placeholder="Write your review" class="review-input" rows="6" cols="50"
+                [(ngModel)]="review" required></textarea>
+        </div>
+        <br>
+        <button type="submit">Save</button>
+    </form>
+    <button (click)="logout()" class="logout-button">Logout</button>
+</div>
